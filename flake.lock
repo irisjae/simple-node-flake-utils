@@ -1,0 +1,106 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1648297722,
+        "narHash": "sha256-W+qlPsiZd8F3XkzXOzAoR+mpFqzm3ekQkJNa+PIh1BQ=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "0f8662f1319ad6abf89b3380dd2722369fc51ade",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nix-npm-buildpackage": {
+      "locked": {
+        "lastModified": 1648040270,
+        "narHash": "sha256-HZU4h2J5gre5ASHynlln+KoK7wgtFjsqkzVVG2XsFXM=",
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "rev": "881f4bfa68e33cd0fb69e6b739fb92f8d0bbe37e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "type": "github"
+      }
+    },
+    "nix-npm-buildpackage_2": {
+      "locked": {
+        "lastModified": 1648040270,
+        "narHash": "sha256-HZU4h2J5gre5ASHynlln+KoK7wgtFjsqkzVVG2XsFXM=",
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "rev": "881f4bfa68e33cd0fb69e6b739fb92f8d0bbe37e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1648219316,
+        "narHash": "sha256-Ctij+dOi0ZZIfX5eMhgwugfvB+WZSrvVNAyAuANOsnQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "30d3d79b7d3607d56546dd2a6b49e156ba0ec634",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1648219316,
+        "narHash": "sha256-Ctij+dOi0ZZIfX5eMhgwugfvB+WZSrvVNAyAuANOsnQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "30d3d79b7d3607d56546dd2a6b49e156ba0ec634",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "npm-6-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nix-npm-buildpackage": "nix-npm-buildpackage_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1649336666,
+        "narHash": "sha256-3EOrM6IUKDroDObII5NdS8O7uCpVjnpbzvL7gXeQ7lU=",
+        "owner": "irisjae",
+        "repo": "npm-6-flake",
+        "rev": "f110ccc98fe60ccebd11ad4c947ce4966397e3d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "irisjae",
+        "repo": "npm-6-flake",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nix-npm-buildpackage": "nix-npm-buildpackage",
+        "nixpkgs": "nixpkgs",
+        "npm-6-flake": "npm-6-flake"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

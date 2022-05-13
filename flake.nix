@@ -14,7 +14,7 @@ outputs =
 					inherit (pkgs) stdenv;
 					inherit (stdenv) mkDerivation;
 
-					inherit (pkgs) nodePackages;
+					inherit (pkgs) nodePackages jq;
 					inherit (nodePackages) node2nix;
 
 					node2nix-exprs = 
@@ -22,14 +22,16 @@ outputs =
 							{
 							name = "package node2nix expressions";
 							src = src;
-							buildInputs = [ node2nix ];
+							buildInputs = [ node2nix jq ];
 							buildPhase = 
 								''
 								mkdir -p $out/lib
 
 								cd "$out/lib"
 
-								cp "$src/package.json" ./
+								cat "$src/package.json" \
+									| jq -M '{ name: "simple-node-modules", dependencies: (.dependencies // {}), devDependencies: (.devDependencies // {}), optionalDependencies: (.optionalDependencies // {}) }' \
+									> ./package.json
 								cp "$src/package-lock.json" ./
 
 								node2nix --development -l package-lock.json

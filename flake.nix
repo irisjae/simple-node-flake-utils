@@ -36,7 +36,7 @@ outputs =
 
 								node2nix --development -l package-lock.json
 								'';
-							installPhase = "true";
+							dontInstall = true;
 							};
 
 					
@@ -50,15 +50,14 @@ outputs =
 						mkDerivation
 							{
 							name = "simple-node-modules";
-							unpackPhase = "true";
+							dontUnpack = true;
 							buildInputs = [ makeWrapper ];
-							buildPhase = 
+							dontBuild = true;
+							installPhase = 
 								''
 								mkdir -p $out
 								ln -s ${nodeDependencies}/lib/node_modules $out/node_modules
-								'';
-							installPhase = 
-								''
+
 								mkdir -p $out/bin
 
 								if [ -e "${nodeDependencies}/lib/node_modules/.bin" ]; then
@@ -78,10 +77,10 @@ outputs =
 					mkDerivation
 						{
 						name = "simple-node-modules";
-						unpackPhase = "true";
+						dontUnpack = true;
 						buildInputs = [ simple-node-modules ];
-						buildPhase = "true";
-						installPhase = "true";
+						dontBuild = true;
+						dontInstall = true;
 						}
 				;
 			}; };
